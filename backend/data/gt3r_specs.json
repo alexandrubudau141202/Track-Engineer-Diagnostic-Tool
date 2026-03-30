@@ -1,0 +1,137 @@
+{
+    "car": {
+      "name": "Porsche 911 GT3 R",
+      "series": "FIA GT World Challenge / WEC",
+      "engine": {
+        "type": "Flat-6, naturally aspirated",
+        "displacement_cc": 3996,
+        "power_hp": 530,
+        "torque_nm": 465,
+        "max_rpm": 9200,
+        "fuel_type": "95 RON"
+      },
+      "dimensions": {
+        "length_mm": 4650,
+        "width_mm": 1940,
+        "height_mm": 1290,
+        "wheelbase_mm": 2670
+      },
+      "weight": {
+        "dry_kg": 1300,
+        "wet_kg": 1350,
+        "fuel_tank_liters": 70
+      }
+    },
+    
+    "aerodynamics": {
+      "front_wing": {
+        "angle_range_deg": [0, 15],
+        "default_deg": 8,
+        "adjustment_step_deg": 0.5,
+        "effect_per_degree": {
+          "downforce_increase_percent": 8,
+          "drag_increase_percent": 4
+        }
+      },
+      "rear_wing": {
+        "angle_range_deg": [0, 20],
+        "default_deg": 15,
+        "adjustment_step_deg": 0.5,
+        "effect_per_degree": {
+          "downforce_increase_percent": 6,
+          "drag_increase_percent": 3
+        }
+      },
+      "drag_coefficient": 1.15,
+      "downforce_at_200kmh_kg": {
+        "front_wing_8deg": 185,
+        "rear_wing_15deg": 320,
+        "total": 505
+      }
+    },
+    
+    "brakes": {
+      "type": "Carbon-ceramic composite",
+      "front_diameter_mm": 370,
+      "rear_diameter_mm": 330,
+      "brake_balance_range_percent": [40, 65],
+      "default_balance_front_percent": 52,
+      "adjustment_step_percent": 1,
+      "brake_fluid_type": "DOT 4",
+      "fade_risk_above_temp_c": 280
+    },
+    
+    "suspension": {
+      "type": "Double-wishbone, independent",
+      "travel_front_mm": 65,
+      "travel_rear_mm": 65,
+      "anti_roll_bar": "Adjustable"
+    },
+    
+    "tires": {
+      "manufacturer": "Michelin",
+      "compounds": {
+        "soft": {
+          "marking": "60",
+          "grip_level": "high",
+          "optimal_temp_c": 85,
+          "degradation_rate": "fast",
+          "wear_life_laps": 50
+        },
+        "medium": {
+          "marking": "62",
+          "grip_level": "medium",
+          "optimal_temp_c": 90,
+          "degradation_rate": "medium",
+          "wear_life_laps": 80
+        },
+        "hard": {
+          "marking": "64",
+          "grip_level": "low",
+          "optimal_temp_c": 95,
+          "degradation_rate": "slow",
+          "wear_life_laps": 120
+        }
+      },
+      "tire_diameter_inch": 18,
+      "tire_width_front_mm": 305,
+      "tire_width_rear_mm": 305,
+      "pressure_range_bar": [27.0, 31.0],
+      "nominal_cold_pressure_bar": {
+        "front": 28.5,
+        "rear": 29.0
+      },
+      "pressure_increase_per_temp_celsius": 0.05
+    },
+    
+    "fuel": {
+      "tank_capacity_liters": 70,
+      "consumption_typical_lpk": 0.85,
+      "pit_strategy": {
+        "short_stint_hours": 1.5,
+        "medium_stint_hours": 2.5,
+        "long_stint_hours": 3.5,
+        "fuel_required_short_liters": 30,
+        "fuel_required_medium_liters": 50,
+        "fuel_required_long_liters": 70
+      }
+    },
+    
+    "traction_control": {
+      "levels": [0, 1, 2, 3],
+      "level_0": "Off (maximum power delivery)",
+      "level_1": "Mild (1-5% slip allowed)",
+      "level_2": "Medium (5-10% slip allowed)",
+      "level_3": "Aggressive (>10% slip allowed)",
+      "recommended_default": 1
+    },
+    
+    "abs_system": {
+      "levels": [0, 1, 2, 3],
+      "level_0": "Off (no intervention)",
+      "level_1": "Mild (minimal correction)",
+      "level_2": "Medium (balanced intervention)",
+      "level_3": "Aggressive (maximum safety)",
+      "recommended_default": 1
+    }
+  }

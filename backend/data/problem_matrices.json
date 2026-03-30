@@ -1,0 +1,312 @@
+{
+    "diagnosis_matrix": {
+      "understeer_entry": {
+        "condition_key": "high_steering_angle_low_lateral_g",
+        "scoring_rules": [
+          {
+            "metric": "driver_feedback_understeer",
+            "value_gte": 2,
+            "weight": 40
+          },
+          {
+            "metric": "steering_angle_high",
+            "value_gte": 10,
+            "weight": 20
+          },
+          {
+            "metric": "lateral_g_low",
+            "value_lt": 1.0,
+            "weight": 20
+          },
+          {
+            "metric": "brake_to_apex_distance_increasing",
+            "weight": 20
+          }
+        ],
+        "severity_mapping": {
+          "80": "high",
+          "60": "medium",
+          "40": "low"
+        }
+      },
+      
+      "understeer_mid_corner": {
+        "condition_key": "constant_steering_high_yaw_lag",
+        "scoring_rules": [
+          {
+            "metric": "driver_feedback_understeer",
+            "value_gte": 3,
+            "weight": 35
+          },
+          {
+            "metric": "yaw_rate_lag_high",
+            "weight": 25
+          },
+          {
+            "metric": "lateral_g_dropping",
+            "weight": 20
+          },
+          {
+            "metric": "speed_loss_mid_corner",
+            "weight": 20
+          }
+        ],
+        "severity_mapping": {
+          "80": "high",
+          "60": "medium",
+          "40": "low"
+        }
+      },
+      
+      "understeer_exit": {
+        "condition_key": "understeer_on_throttle",
+        "scoring_rules": [
+          {
+            "metric": "driver_feedback_understeer",
+            "value_gte": 3,
+            "weight": 35
+          },
+          {
+            "metric": "throttle_understeer_correlation",
+            "weight": 30
+          },
+          {
+            "metric": "lateral_g_stable_throttle_apply_pushes",
+            "weight": 20
+          },
+          {
+            "metric": "wheel_spin_detected",
+            "weight": 15
+          }
+        ],
+        "severity_mapping": {
+          "80": "high",
+          "60": "medium",
+          "40": "low"
+        }
+      },
+      
+      "oversteer_entry": {
+        "condition_key": "rear_snap_on_turn_in",
+        "scoring_rules": [
+          {
+            "metric": "driver_feedback_oversteer",
+            "value_lte": -2,
+            "weight": 40
+          },
+          {
+            "metric": "yaw_rate_spike_early",
+            "weight": 25
+          },
+          {
+            "metric": "brake_to_turn_in_transition",
+            "weight": 20
+          },
+          {
+            "metric": "steering_correction_rapid",
+            "weight": 15
+          }
+        ],
+        "severity_mapping": {
+          "80": "high",
+          "60": "medium",
+          "40": "low"
+        }
+      },
+      
+      "oversteer_mid_corner": {
+        "condition_key": "mid_corner_yaw_uncontrolled",
+        "scoring_rules": [
+          {
+            "metric": "driver_feedback_oversteer",
+            "value_lte": -3,
+            "weight": 40
+          },
+          {
+            "metric": "yaw_rate_sustained_high",
+            "weight": 30
+          },
+          {
+            "metric": "high_speed_corner",
+            "weight": 20
+          },
+          {
+            "metric": "steering_correction_needed",
+            "weight": 10
+          }
+        ],
+        "severity_mapping": {
+          "80": "high",
+          "60": "medium",
+          "40": "low"
+        }
+      },
+      
+      "oversteer_exit": {
+        "condition_key": "oversteer_on_throttle",
+        "scoring_rules": [
+          {
+            "metric": "driver_feedback_oversteer",
+            "value_lte": -3,
+            "weight": 35
+          },
+          {
+            "metric": "throttle_oversteer_correlation",
+            "weight": 30
+          },
+          {
+            "metric": "rear_wheel_spin",
+            "weight": 20
+          },
+          {
+            "metric": "rear_tire_temp_high",
+            "weight": 15
+          }
+        ],
+        "severity_mapping": {
+          "80": "high",
+          "60": "medium",
+          "40": "low"
+        }
+      },
+      
+      "tire_degradation_front": {
+        "condition_key": "front_tire_temp_spike_grip_loss",
+        "scoring_rules": [
+          {
+            "metric": "front_tire_temp_gte_100c",
+            "weight": 30
+          },
+          {
+            "metric": "front_tire_temp_delta_high",
+            "value_gte": 10,
+            "weight": 20
+          },
+          {
+            "metric": "front_tire_pressure_high",
+            "value_gte": 30,
+            "weight": 20
+          },
+          {
+            "metric": "mid_corner_grip_loss_late_stint",
+            "weight": 30
+          }
+        ],
+        "severity_mapping": {
+          "80": "high",
+          "60": "medium",
+          "40": "low"
+        }
+      },
+      
+      "tire_degradation_rear": {
+        "condition_key": "rear_tire_temp_spike_exit_loss",
+        "scoring_rules": [
+          {
+            "metric": "rear_tire_temp_gte_100c",
+            "weight": 30
+          },
+          {
+            "metric": "rear_tire_temp_delta_high",
+            "value_gte": 10,
+            "weight": 20
+          },
+          {
+            "metric": "rear_tire_pressure_high",
+            "value_gte": 30,
+            "weight": 20
+          },
+          {
+            "metric": "exit_traction_loss_late_stint",
+            "weight": 30
+          }
+        ],
+        "severity_mapping": {
+          "80": "high",
+          "60": "medium",
+          "40": "low"
+        }
+      },
+      
+      "brake_fade": {
+        "condition_key": "high_brake_pressure_low_deceleration",
+        "scoring_rules": [
+          {
+            "metric": "brake_pressure_gte_70_percent",
+            "weight": 30
+          },
+          {
+            "metric": "deceleration_lt_0_5g",
+            "weight": 35
+          },
+          {
+            "metric": "brake_distance_increasing_over_stint",
+            "weight": 20
+          },
+          {
+            "metric": "long_braking_zones_accumulated",
+            "weight": 15
+          }
+        ],
+        "severity_mapping": {
+          "80": "high",
+          "60": "medium",
+          "40": "low"
+        }
+      },
+      
+      "brake_balance_instability": {
+        "condition_key": "braking_pull_or_push_felt",
+        "scoring_rules": [
+          {
+            "metric": "driver_feedback_brake_stability_lte_minus2",
+            "weight": 40
+          },
+          {
+            "metric": "brake_bias_extreme",
+            "weight": 30
+          },
+          {
+            "metric": "steering_input_during_braking_high",
+            "weight": 20
+          },
+          {
+            "metric": "brake_event_variance_high",
+            "weight": 10
+          }
+        ],
+        "severity_mapping": {
+          "80": "high",
+          "60": "medium",
+          "40": "low"
+        }
+      },
+      
+      "balanced": {
+        "condition_key": "no_major_issues_detected",
+        "scoring_rules": [
+          {
+            "metric": "driver_feedback_neutral",
+            "weight": 40
+          },
+          {
+            "metric": "no_extreme_telemetry",
+            "weight": 30
+          },
+          {
+            "metric": "tire_temps_nominal",
+            "weight": 20
+          },
+          {
+            "metric": "pace_consistent",
+            "weight": 10
+          }
+        ],
+        "severity_mapping": {
+          "80": "low",
+          "60": "low",
+          "40": "low"
+        }
+      }
+    }
+  }
