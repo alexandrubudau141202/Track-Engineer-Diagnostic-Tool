@@ -493,17 +493,3 @@ Basic health check.
 5. **Frontend Preview Before Download:** User sees the diagnosis before committing to PDF. Faster iteration.
 
 ---
-
-## 10. Next Steps
-
-1. **Create repo structure** (mkdir + git init)
-2. **Set up FastAPI skeleton** (main.py, requirements.txt)
-3. **Define Pydantic models** (scenario.py, telemetry.py, diagnosis.py)
-4. **Build telemetry processor** (parsing, validation, metric computation)
-5. **Scaffold diagnosis engine** (start with 2–3 GT3 R problems)
-6. **Test with sample telemetry** (mock data or real F1/GT3 telemetry)
-7. **Begin frontend** (React form + API integration)
-
----
-
-**This is your roadmap. Modify as you learn, but the architecture holds.**
